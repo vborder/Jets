@@ -20,13 +20,10 @@ public abstract class Jet {
 	}
 	
 	public void fly() {
-		// Fly all Jets calls the fly() method on the entire fleet of jets.
-		// fly() prints out the jet details and the amount of time the jet can 
-		// fly until it runs out of fuel (based on speed and range).
-		double duration = this.speed * this.range;
+		double duration = this.range / this.speed;
 		
 		System.out.println("Model: " + this.model + " Speed: " + this.speed + " Range: " + this.range + " Price: " +
-		this.price + " Duration: " + duration + "\n"); 	
+		this.price + " Flight time: " + Math.round(duration) + " hours");
 	}
 	
 	public double getSpeedInMach(double speed) {
@@ -68,7 +65,7 @@ public abstract class Jet {
 
 	@Override
 	public String toString() {
-		return "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
+		return "Jet model: " + model + ", speed: " + speed + " mph, range: " + range + " miles, price: $" + price + "";
 	}
 
 	@Override

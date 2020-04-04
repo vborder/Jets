@@ -58,7 +58,7 @@ public class AirField {
 		}
 		for (Jet jet : jets) {
 			if(fastestJet == jet.getSpeed()) {
-				System.out.println("The fastest jet is: " + jet.toString()+ "\n");
+				System.out.println("The fastest jet is: " + jet.toString());
 			}
 		}
 	}
@@ -73,7 +73,7 @@ public class AirField {
 		}
 		for (Jet jet : jets) {
 			if(airbus == jet.getRange()) {
-				System.out.println("The jet with the longest range is: " + jet.toString()+ "\n");
+				System.out.println("The jet with the longest range is: " + jet.toString());
 			}
 		}
 	}
@@ -104,7 +104,7 @@ public class AirField {
 			
 			Jet plane = new JetImpl(model, speed, range, price);
 			jets.add(0, plane);
-			System.out.println("\nThe jet you created has been added to the fleet.\n");
+			System.out.println("\nThe jet you created has been added to the fleet.");
 		}
 	
 	public void removeJet() {

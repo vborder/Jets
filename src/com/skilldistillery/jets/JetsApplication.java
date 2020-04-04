@@ -3,7 +3,7 @@ package com.skilldistillery.jets;
 import java.util.Scanner;
 
 public class JetsApplication {
-	private AirField khawk = new AirField();
+	private AirField kHawk = new AirField();
 	public AirField airField;
 	Scanner kb = new Scanner(System.in);
 
@@ -13,8 +13,8 @@ public class JetsApplication {
 		jetApp.launch();
 	}	
 		public void launch() {
-			System.out.println("          Welcome to the JetForce App!              \n");
-			khawk.readJets();
+			System.out.println("\n        Welcome to the JetForce App!           ");
+			kHawk.readJets();
 			displayUserMenu();
 		}
 		
@@ -22,7 +22,7 @@ public class JetsApplication {
 			boolean menuSel = true;
 			do {
 				
-				System.out.println("-----------------MAIN MENU-------------------");
+				System.out.println("\n-----------------MAIN MENU-----------------");
 				System.out.println("           Select an item (number)           ");
 				System.out.println("1: List fleet                                ");
 				System.out.println("2: Fly all jets                              ");
@@ -37,31 +37,31 @@ public class JetsApplication {
 				
 				switch(menuChoice) {
 				case 1: 
-					khawk.displayFleet(); // displays jets
+					kHawk.displayFleet(); // displays jets
 					break;
 				case 2: 
-					khawk.fly(); // fly method is executed on all jets
+					kHawk.fly(); // fly method is executed on all jets
 					break;
 				case 3:
-					khawk.fastJet(); // displays fastest jet in fleet
+					kHawk.fastJet(); // displays fastest jet in fleet
 					break;
 				case 4: 
-					khawk.airbus(); // displays jet with longest range
+					kHawk.airbus(); // displays jet with longest range
 					break;
 				case 5: 
-					khawk.loadJet(); // load method executed on all jets
+					kHawk.loadJet(); // load method executed on all jets
 					break;
 				case 6: 
-					khawk.fightJet(); // dogfight method executed on all jets
+					kHawk.fightJet(); // dogfight method executed on all jets
 					break;
 				case 7:
-					khawk.addJet(); // adds jet to the fleet
+					kHawk.addJet(); // adds jet to the fleet
 					break;
 				case 8:
-					khawk.removeJet(); // removes jet from fleet
+					kHawk.removeJet(); // removes jet from fleet
 					break;
 				case 9:
-//					airField.exitApp(); // exits program
+					kHawk.exitApp(); // exits program
 					System.out.println("Thanks for flying with us. Aim high!");
 					menuSel = false;
 					System.exit(0);
