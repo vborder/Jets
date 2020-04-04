@@ -6,7 +6,7 @@ public abstract class Jet {
 	private double speed;
 	private int range;
 	private long price;
-	
+
 	public Jet(String model, double speed, int range, long price) {
 //		super();
 		this.model = model;
@@ -14,22 +14,22 @@ public abstract class Jet {
 		this.range = range;
 		this.price = price;
 	}
-	
+
 	public Jet() {
-		
+
 	}
-	
+
 	public void fly() {
 		double duration = this.range / this.speed;
-		
-		System.out.println("Model: " + this.model + " Speed: " + this.speed + " Range: " + this.range + " Price: " +
-		this.price + " Flight time: " + Math.round(duration) + " hours");
+
+		System.out.println("Model: " + this.model + " , Speed: " + this.speed + " mph, Range: " + this.range + " miles, Price: $"
+				+ this.price + " Flight time: " + Math.round(duration) + " hours");
 	}
-	
-	public double getSpeedInMach(double speed) {
-		double machSpeed = this.speed / 767; 
-		return machSpeed;
-	}
+
+//	public double getSpeedInMach(double speed) {
+//		double machSpeed = this.speed / 767; 
+//		return machSpeed;
+//	}
 
 	public String getModel() {
 		return model;
@@ -103,5 +103,5 @@ public abstract class Jet {
 			return false;
 		return true;
 	}
-	
+
 }
