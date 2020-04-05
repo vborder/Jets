@@ -27,7 +27,7 @@ public class AirField {
 					Jet fighter = new FighterJet(model, speed, range, price);
 					jets.add(fighter);
 				}
-				if (model.contains("C-")) { // assigning planes as CargoPlanes; left assignation of other types of
+				if (model.contains("C-")) { // assigning planes as CargoPlanes; left assignation of other type of
 											// planes to addJet method
 					Jet cargo = new CargoPlane(model, speed, range, price);
 					jets.add(cargo);
