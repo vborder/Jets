@@ -100,7 +100,6 @@ public class AirField {
 	}
 
 	public void addJet() {
-		int counter = 0;
 
 		System.out.println("\nLet's create your jet!\n");
 		System.out.println("Enter the jet model: ");
@@ -116,7 +115,16 @@ public class AirField {
 		long price = kb.nextLong();
 
 		Jet plane = new JetImpl(model, speed, range, price);
-		jets.add(0, plane);
+		if (model.contains("F-")) {
+			Jet fighter = new FighterJet(model, speed, range, price);
+			jets.add(fighter);
+		}
+		if (model.contains("C-")) {
+			Jet cargo = new CargoPlane(model, speed, range, price);
+			jets.add(cargo);
+		} else {
+			jets.add(plane);
+		}
 		System.out.println("\nThe jet you created has been added to the fleet.");
 	}
 

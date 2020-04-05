@@ -4,25 +4,23 @@ import java.util.Scanner;
 
 public class JetsApplication {
 	private AirField kHawk = new AirField();
-	public AirField airField;
 	Scanner kb = new Scanner(System.in);
 
 	public static void main(String[] args) {
-
 		JetsApplication jetApp = new JetsApplication();
 		jetApp.launch();
 	}
 
 	public void launch() {
-		System.out.println("\n        Welcome to the JetForce App!           ");
+		System.out.println("\n        Welcome to the JetPlay App!            ");
 		kHawk.readJets();
 		displayUserMenu();
 	}
 
 	public void displayUserMenu() {
 		boolean menuSel = true;
+		
 		do {
-
 			System.out.println("\n-----------------MAIN MENU-----------------");
 			System.out.println("           Select an item (number)           ");
 			System.out.println("1: List fleet                                ");
