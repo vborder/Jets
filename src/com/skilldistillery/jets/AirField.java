@@ -14,20 +14,20 @@ public class AirField {
 	Scanner kb = new Scanner(System.in);
 
 	public List<Jet> readJets() {
-		try (BufferedReader bufIn = new BufferedReader(new FileReader("jetFile.txt"))) {
+		try (BufferedReader bufIn = new BufferedReader(new FileReader("jetFile.txt"))) { // adding in jets from file
 			String line;
-			while ((line = bufIn.readLine()) != null) {
 
+			while ((line = bufIn.readLine()) != null) {
 				String[] jetYard = line.split(", ");
 				String model = jetYard[0];
 				double speed = Double.parseDouble(jetYard[1]);
 				int range = Integer.parseInt(jetYard[2]);
 				long price = Long.parseLong(jetYard[3]);
-				if (model.contains("F-")) {
+				if (model.contains("F-")) { // assigning planes as FighterJets for interface use
 					Jet fighter = new FighterJet(model, speed, range, price);
 					jets.add(fighter);
 				}
-				if (model.contains("C-")) {
+				if (model.contains("C-")) { // assigning planes as CargoPlanes; left assignation of other types of planes to addJet method
 					Jet cargo = new CargoPlane(model, speed, range, price);
 					jets.add(cargo);
 				}
