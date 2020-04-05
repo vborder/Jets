@@ -27,7 +27,8 @@ public class AirField {
 					Jet fighter = new FighterJet(model, speed, range, price);
 					jets.add(fighter);
 				}
-				if (model.contains("C-")) { // assigning planes as CargoPlanes; left assignation of other types of planes to addJet method
+				if (model.contains("C-")) { // assigning planes as CargoPlanes; left assignation of other types of
+											// planes to addJet method
 					Jet cargo = new CargoPlane(model, speed, range, price);
 					jets.add(cargo);
 				}
@@ -40,10 +41,12 @@ public class AirField {
 	}
 
 	public void displayFleet() {
+		int counter = 0; // added to make numbered list of jets
 
 		System.out.println("The fleet of jets includes: \n");
 		for (Jet jet : jets) {
-			System.out.println(jet.toString());
+			counter++;
+			System.out.println(counter + " " + jet.toString());
 		}
 	}
 
@@ -54,39 +57,31 @@ public class AirField {
 	}
 
 	public void fastJet() {
-		double fastestJet = 0.0;
-
-		for (Jet jet : jets) {
-			if (fastestJet < jet.getSpeed()) {
-				fastestJet = jet.getSpeed();
+		Jet fastestJet = jets.get(0);
+		
+		for(int i = 0; i < jets.size(); i++) {
+			if(fastestJet.getSpeed() < jets.get(i).getSpeed()) {
+				fastestJet = jets.get(i);
 			}
 		}
-		for (Jet jet : jets) {
-			if (fastestJet == jet.getSpeed()) {
-				System.out.println("The fastest jet is: " + jet.toString());
-			}
-		}
+		System.out.println("The fastest jet is: " + fastestJet);
 	}
 
 	public void airbus() {
-		int airbus = 0;
+		Jet airbus = jets.get(0);
 
-		for (Jet jet : jets) {
-			if (airbus < jet.getRange()) {
-				airbus = jet.getRange();
+		for (int i = 0; i < jets.size(); i++) {
+			if (airbus.getSpeed() < jets.get(i).getRange()) {
+				airbus = jets.get(i);
 			}
 		}
-		for (Jet jet : jets) {
-			if (airbus == jet.getRange()) {
-				System.out.println("The jet with the longest range is: " + jet.toString());
-			}
-		}
+		System.out.println("The jet with the longest range is: " + airbus);
 	}
 
 	public void loadJet() {
 		for (Jet jet : jets) {
 			if (jet instanceof CargoPlane) {
-				((CargoPlane) jet).loadCargo();
+				((CargoPlane) jet).loadCargo(); // executes interface cargo method
 			}
 		}
 	}
@@ -94,13 +89,12 @@ public class AirField {
 	public void fightJet() {
 		for (Jet jet : jets) {
 			if (jet instanceof FighterJet) {
-				((FighterJet) jet).fight();
+				((FighterJet) jet).fight(); // executes interface fighter method
 			}
 		}
 	}
 
 	public void addJet() {
-
 		System.out.println("\nLet's create your jet!\n");
 		System.out.println("Enter the jet model: ");
 		String model = kb.next();
@@ -115,11 +109,11 @@ public class AirField {
 		long price = kb.nextLong();
 
 		Jet plane = new JetImpl(model, speed, range, price);
-		if (model.contains("F-")) {
+		if (model.contains("F-")) { // added so if user enters an F- or C- designation for custom craft, will have
+									// characteristics of either jet type
 			Jet fighter = new FighterJet(model, speed, range, price);
 			jets.add(fighter);
-		}
-		if (model.contains("C-")) {
+		} else if (model.contains("C-")) {
 			Jet cargo = new CargoPlane(model, speed, range, price);
 			jets.add(cargo);
 		} else {
@@ -140,7 +134,7 @@ public class AirField {
 			}
 
 			System.out.println("\nWhich jet would you like to remove? Enter the jet's corresponding number, "
-					+ "or 0 to return to the main menu.\n");
+					+ "or enter 0 to return to the main menu.\n");
 			int menuChoice = kb.nextInt();
 
 			if (menuChoice == 0) {
@@ -151,7 +145,6 @@ public class AirField {
 				System.out.println("The jet you selected has been removed.\n");
 				counter = 0;
 			}
-
 		}
 	}
 
@@ -159,5 +152,4 @@ public class AirField {
 		System.out.println("Thanks for flying with us. Aim high!");
 		System.exit(0);
 	}
-
 }

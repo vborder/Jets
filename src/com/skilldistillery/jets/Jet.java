@@ -7,7 +7,7 @@ public abstract class Jet {
 	private long price;
 
 	public Jet(String model, double speed, int range, long price) {
-//		super();
+		super();
 		this.model = model;
 		this.speed = speed;
 		this.range = range;
