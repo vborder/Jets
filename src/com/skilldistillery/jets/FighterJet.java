@@ -6,6 +6,10 @@ public class FighterJet extends Jet implements CombatReady {
 		super(model, speed, range, price);
 	}
 	
+	public FighterJet() {
+		
+	}
+	
 	public void fight() {
 		System.out.println(getModel() + " is locked and loaded and ready to take down some planes ...");
 	}

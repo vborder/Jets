@@ -12,6 +12,10 @@ import java.util.Scanner;
 public class AirField { // user story #2
 	private List<Jet> jets = new ArrayList<>();
 	Scanner kb = new Scanner(System.in);
+	
+	public AirField() {
+		
+	}
 
 	public List<Jet> readJets() {
 		try (BufferedReader bufIn = new BufferedReader(new FileReader("jetFile.txt"))) {
@@ -27,8 +31,7 @@ public class AirField { // user story #2
 					Jet fighter = new FighterJet(model, speed, range, price);
 					jets.add(fighter); // user story #3
 				}
-				if (model.contains("C-")) { // assigning planes as CargoPlanes; left assignation of other types of
-											// planes to addJet method
+				if (model.contains("C-")) { 
 					Jet cargo = new CargoPlane(model, speed, range, price);
 					jets.add(cargo);
 				}
@@ -46,7 +49,7 @@ public class AirField { // user story #2
 		System.out.println("The fleet of jets includes: \n");
 		for (Jet jet : jets) {
 			counter++;
-			System.out.println(counter + ": " + jet.toString());
+			System.out.println(counter + ": " + jet);
 		}
 	}
 
