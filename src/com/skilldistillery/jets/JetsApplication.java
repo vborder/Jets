@@ -19,7 +19,7 @@ public class JetsApplication {
 
 	public void displayUserMenu() {
 		boolean menuSel = true;
-		
+
 		do {
 			System.out.println("\n-----------------MAIN MENU-----------------");
 			System.out.println("           Select an item (number)           ");
@@ -51,10 +51,10 @@ public class JetsApplication {
 				kHawk.loadJet(); // load method executed on all jets
 				break;
 			case 6:
-				kHawk.fightJet(); // dogfight method executed on all jets
+				kHawk.fightJet(); // fight method executed on all jets
 				break;
 			case 7:
-				kHawk.addJet(); // adds jet to the fleet
+				kHawk.addJet(); // adds jet to fleet
 				break;
 			case 8:
 				kHawk.removeJet(); // removes jet from fleet
@@ -70,5 +70,4 @@ public class JetsApplication {
 
 		} while (menuSel = true);
 	}
-
 }

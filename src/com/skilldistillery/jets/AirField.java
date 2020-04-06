@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AirField {
-	private ArrayList<Jet> jets = new ArrayList<>();;
+	private List<Jet> jets = new ArrayList<>();;
 	Scanner kb = new Scanner(System.in);
 
 	public List<Jet> readJets() {
-		try (BufferedReader bufIn = new BufferedReader(new FileReader("jetFile.txt"))) { // adding in jets from file
+		try (BufferedReader bufIn = new BufferedReader(new FileReader("jetFile.txt"))) {
 			String line;
 
 			while ((line = bufIn.readLine()) != null) {
@@ -23,7 +23,7 @@ public class AirField {
 				double speed = Double.parseDouble(jetYard[1]);
 				int range = Integer.parseInt(jetYard[2]);
 				long price = Long.parseLong(jetYard[3]);
-				if (model.contains("F-")) { // assigning planes as FighterJets for interface use
+				if (model.contains("F-")) {
 					Jet fighter = new FighterJet(model, speed, range, price);
 					jets.add(fighter);
 				}
@@ -58,9 +58,9 @@ public class AirField {
 
 	public void fastJet() {
 		Jet fastestJet = jets.get(0);
-		
-		for(int i = 0; i < jets.size(); i++) {
-			if(fastestJet.getSpeed() < jets.get(i).getSpeed()) {
+
+		for (int i = 0; i < jets.size(); i++) {
+			if (fastestJet.getSpeed() < jets.get(i).getSpeed()) {
 				fastestJet = jets.get(i);
 			}
 		}
@@ -81,7 +81,7 @@ public class AirField {
 	public void loadJet() {
 		for (Jet jet : jets) {
 			if (jet instanceof CargoPlane) {
-				((CargoPlane) jet).loadCargo(); // executes interface cargo method
+				((CargoPlane) jet).loadCargo();
 			}
 		}
 	}
@@ -89,7 +89,7 @@ public class AirField {
 	public void fightJet() {
 		for (Jet jet : jets) {
 			if (jet instanceof FighterJet) {
-				((FighterJet) jet).fight(); // executes interface fighter method
+				((FighterJet) jet).fight();
 			}
 		}
 	}

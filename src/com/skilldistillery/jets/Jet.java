@@ -7,7 +7,6 @@ public abstract class Jet {
 	private long price;
 
 	public Jet(String model, double speed, int range, long price) {
-		super();
 		this.model = model;
 		this.speed = speed;
 		this.range = range;
@@ -21,8 +20,9 @@ public abstract class Jet {
 	public void fly() {
 		double duration = this.range / this.speed;
 
-		System.out.println("Model: " + this.model + " , Speed: " + this.speed + " mph, Range: " + this.range
-				+ " miles, Price: $" + this.price + " Flight time: " + Math.round(duration) + " hours at max speed");
+		System.out.println("Jet model: " + this.model + ", Speed: " + this.speed + " mph, Range: " + this.range
+				+ " miles, Price: $" + this.price + " Flight time: " + Math.round(duration * 10.0) / 10.0
+				+ " hours at max speed");
 	}
 
 	public String getModel() {
