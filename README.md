@@ -4,9 +4,10 @@
 
 The project is a jet app designed to:
 
-- upload a text file of jet information into the program and display information about the jets;
-- allow a user to enter their own custom jet;
-- allow a user to select from a menu of options to: (1) list all of the jets in the program; (2) see various information about the jets; (3) display the fastest jet and the jet with the longest range; and (4) remove a jet form the program.
+- Upload a text file of jet information into the program and display information about the jets;
+- Allow a user to enter their own custom jet;
+- Allow a user to select from a menu of options to: (1) list all of the jets in the program; (2) see various information about the jets; (3) display the fastest jet and the jet with the longest range; and (4) remove a jet form the program.
+- After starting the program, the user should select an option presented in the main menu to see various information about the jets. The menu will loop until the user decides to quit the program.
 
 ###Technologies Used
 
