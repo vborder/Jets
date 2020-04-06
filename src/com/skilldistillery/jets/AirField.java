@@ -99,10 +99,10 @@ public class AirField {
 		System.out.println("Enter the jet model: ");
 		String model = kb.next();
 
-		System.out.println("Enter the jet speed: ");
+		System.out.println("Enter the jet speed in mph: ");
 		double speed = kb.nextDouble();
 
-		System.out.println("Enter the jet range: ");
+		System.out.println("Enter the jet range in miles: ");
 		int range = kb.nextInt();
 
 		System.out.println("Enter the jet cost: ");
