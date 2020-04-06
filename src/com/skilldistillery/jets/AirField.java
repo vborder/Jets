@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AirField {
-	private List<Jet> jets = new ArrayList<>();;
+	private List<Jet> jets = new ArrayList<>();
 	Scanner kb = new Scanner(System.in);
 
 	public List<Jet> readJets() {
@@ -46,7 +46,7 @@ public class AirField {
 		System.out.println("The fleet of jets includes: \n");
 		for (Jet jet : jets) {
 			counter++;
-			System.out.println(counter + " " + jet.toString());
+			System.out.println(counter + ": " + jet.toString());
 		}
 	}
 
@@ -113,7 +113,8 @@ public class AirField {
 									// characteristics of either jet type
 			Jet fighter = new FighterJet(model, speed, range, price);
 			jets.add(fighter);
-		} else if (model.contains("C-")) {
+		} 
+		else if (model.contains("C-")) {
 			Jet cargo = new CargoPlane(model, speed, range, price);
 			jets.add(cargo);
 		} else {
@@ -130,7 +131,7 @@ public class AirField {
 			System.out.println("--------------------FLEET---------------------\n");
 			for (Jet jet : jets) {
 				counter++;
-				System.out.println(String.valueOf(counter) + " " + jet);
+				System.out.println(String.valueOf(counter) + ": " + jet);
 			}
 
 			System.out.println("\nWhich jet would you like to remove? Enter the jet's corresponding number, "

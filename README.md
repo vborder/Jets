@@ -1,6 +1,6 @@
-Jets - Week 3 Skill Distillery
+##Jets - Week 3 Skill Distillery
 
-Overview
+###Overview
 
 The project is a jet app designed to:
 
@@ -8,15 +8,18 @@ The project is a jet app designed to:
 - allow a user to enter their own custom jet;
 - allow a user to select from a menu of options to: (1) list all of the jets in the program; (2) see various information about the jets; (3) display the fastest jet and the jet with the longest range; and (4) remove a jet form the program.
 
-Technologies Used
+###Technologies Used
 
 - Eclipse
 - Java
 - GitHub/Git
 - TextEdit
 
-Lessons Learned
+###Lessons Learned
 
-- I need to come up with a better system for putting code to the side that doesn't work as intended. I have been commenting it out to try something new, but the program is then littered with scraps of code that may not hurt the program, but are unnecessary and may come out in the final product;
+- I need to come up with a better system for putting code to the side that doesn't work as intended. I have been commenting it out when trying something new, but after some time working the program is littered with scraps of code that may not hurt the operation of the program, but are unnecessary and may come out in the final product;
 - Finally learned how to implement foreach loops in limited cases, and they work as intended;
-- super() is necessary for subclasses to be able use information declared in the superclass for interfaces; 
+- super() is necessary for subclasses to be able use fields declared in the superclass in interfaces;
+- Fixed a bug caused by using two if statements while adding items to a List implemented over an ArrayList; adding a plane created double entries;
+- Learned how to implement interfaces into a program;
+- The parseType wrapper class is very effective at converting Strings to primitive types.
