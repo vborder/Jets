@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class AirField {
+public class AirField { // user story #2
 	private List<Jet> jets = new ArrayList<>();
 	Scanner kb = new Scanner(System.in);
 
@@ -25,7 +25,7 @@ public class AirField {
 				long price = Long.parseLong(jetYard[3]);
 				if (model.contains("F-")) {
 					Jet fighter = new FighterJet(model, speed, range, price);
-					jets.add(fighter);
+					jets.add(fighter); // user story #3
 				}
 				if (model.contains("C-")) { // assigning planes as CargoPlanes; left assignation of other types of
 											// planes to addJet method
@@ -40,8 +40,8 @@ public class AirField {
 		return jets;
 	}
 
-	public void displayFleet() {
-		int counter = 0; // added to make numbered list of jets
+	public void displayJetFleet() { // user story #5
+		int counter = 0; // added to make numbered menu of jets
 
 		System.out.println("The fleet of jets includes: \n");
 		for (Jet jet : jets) {
@@ -50,13 +50,13 @@ public class AirField {
 		}
 	}
 
-	public void fly() {
+	public void fly() { // user story #6
 		for (Jet jet : jets) {
 			jet.fly();
 		}
 	}
 
-	public void fastJet() {
+	public void fastestJet() { // user story #
 		Jet fastestJet = jets.get(0);
 
 		for (int i = 0; i < jets.size(); i++) {
@@ -78,7 +78,7 @@ public class AirField {
 		System.out.println("The jet with the longest range is: " + airbus);
 	}
 
-	public void loadJet() {
+	public void loadJet() { // user story #8
 		for (Jet jet : jets) {
 			if (jet instanceof CargoPlane) {
 				((CargoPlane) jet).loadCargo();
@@ -94,7 +94,7 @@ public class AirField {
 		}
 	}
 
-	public void addJet() {
+	public void createJet() { // user story #9
 		System.out.println("\nLet's create your jet!\n");
 		System.out.println("Enter the jet model: ");
 		String model = kb.next();
@@ -123,7 +123,7 @@ public class AirField {
 		System.out.println("\nThe jet you created has been added to the fleet.");
 	}
 
-	public void removeJet() {
+	public void deleteJet() { // user story #10
 		int counter = 0;
 		boolean menuDisplay = true;
 
@@ -134,7 +134,7 @@ public class AirField {
 				System.out.println(String.valueOf(counter) + ": " + jet);
 			}
 
-			System.out.println("\nWhich jet would you like to remove? Enter the jet's corresponding number, "
+			System.out.println("\nWhich jet would you like to delete? Enter the jet's corresponding number, "
 					+ "or enter 0 to return to the main menu.\n");
 			int menuChoice = kb.nextInt();
 
@@ -149,7 +149,7 @@ public class AirField {
 		}
 	}
 
-	public void exitApp() {
+	public void exitApp() { // user story #11
 		System.out.println("Thanks for flying with us. Aim high!");
 		System.exit(0);
 	}

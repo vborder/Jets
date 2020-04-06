@@ -6,7 +6,7 @@ public class JetsApplication {
 	private AirField kHawk = new AirField();
 	Scanner kb = new Scanner(System.in);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // user story #1
 		JetsApplication jetApp = new JetsApplication();
 		jetApp.launch();
 	}
@@ -21,7 +21,7 @@ public class JetsApplication {
 		boolean menuSel = true;
 
 		do {
-			System.out.println("\n-----------------MAIN MENU-----------------");
+			System.out.println("\n-----------------MAIN MENU-----------------"); // user story #4
 			System.out.println("           Select an item (number)           ");
 			System.out.println("1: List fleet                                ");
 			System.out.println("2: Fly all jets                              ");
@@ -36,13 +36,13 @@ public class JetsApplication {
 
 			switch (menuChoice) {
 			case 1:
-				kHawk.displayFleet(); // displays jets
+				kHawk.displayJetFleet(); // displays jets
 				break;
 			case 2:
 				kHawk.fly(); // fly method is executed on all jets
 				break;
 			case 3:
-				kHawk.fastJet(); // displays fastest jet in fleet
+				kHawk.fastestJet(); // displays fastest jet in fleet
 				break;
 			case 4:
 				kHawk.airbus(); // displays jet with longest range
@@ -54,10 +54,10 @@ public class JetsApplication {
 				kHawk.fightJet(); // fight method executed on all jets
 				break;
 			case 7:
-				kHawk.addJet(); // adds jet to fleet
+				kHawk.createJet(); // adds jet to fleet
 				break;
 			case 8:
-				kHawk.removeJet(); // removes jet from fleet
+				kHawk.deleteJet(); // removes jet from fleet
 				break;
 			case 9:
 				kHawk.exitApp(); // exits program
