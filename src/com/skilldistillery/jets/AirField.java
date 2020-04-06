@@ -71,7 +71,7 @@ public class AirField {
 		Jet airbus = jets.get(0);
 
 		for (int i = 0; i < jets.size(); i++) {
-			if (airbus.getSpeed() < jets.get(i).getRange()) {
+			if (airbus.getRange() < jets.get(i).getRange()) {
 				airbus = jets.get(i);
 			}
 		}

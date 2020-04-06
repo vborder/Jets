@@ -61,13 +61,10 @@ public class JetsApplication {
 				break;
 			case 9:
 				kHawk.exitApp(); // exits program
-				System.out.println("Thanks for flying with us. Aim high!");
-				menuSel = false;
-				System.exit(0);
+				break;
 			default:
 				System.out.println("That was not a valid selection. Please select another choice from the menu.\n");
 			}
-
 		} while (menuSel = true);
 	}
 }
